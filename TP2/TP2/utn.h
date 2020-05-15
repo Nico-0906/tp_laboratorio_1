@@ -12,4 +12,5 @@ int utn_getNumero(int* pResultado, char mensaje[], char mensajeError[], int mini
 void tipoNombre(char vec[], int tam);
 void getStr(char cadena[], int tam);
 void getCharConfirmValidado(char* caracter);
-
+int getSueldo(float* sueldo);
+int getNombre(char nombre[], int tam);

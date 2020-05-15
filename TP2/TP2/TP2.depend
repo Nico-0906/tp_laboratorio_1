@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1589411779 source:/home/nico/Desktop/TP2/tp_laboratorio_1/TP2/TP2/employee.c
 
-1589549937 source:/home/nico/Desktop/TP2/tp_laboratorio_1/TP2/TP2/arrayemployees.c
+1589559135 source:/home/nico/Desktop/TP2/tp_laboratorio_1/TP2/TP2/arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio_ext.h>
@@ -19,9 +19,9 @@
 	"arrayemployees.h"
 	"utn.h"
 
-1589549112 /home/nico/Desktop/TP2/tp_laboratorio_1/TP2/TP2/utn.h
+1589556821 /home/nico/Desktop/TP2/tp_laboratorio_1/TP2/TP2/utn.h
 
-1589551109 source:/home/nico/Desktop/TP2/tp_laboratorio_1/TP2/TP2/utn.c
+1589559485 source:/home/nico/Desktop/TP2/tp_laboratorio_1/TP2/TP2/utn.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

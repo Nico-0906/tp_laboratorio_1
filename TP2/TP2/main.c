@@ -18,14 +18,12 @@ int main()
 
     do{
         switch(menuOpciones()){
-
             case 1:
                 if(addEmployee(proximoId, employee, TAMEMP)){
                     proximoId++;
                     gatillo++;
                 }
                 break;
-
             case 2:
                 if(gatillo > 0){
                 modificarEmpleado(employee, TAMEMP);
@@ -35,7 +33,6 @@ int main()
                     getchar();
                 }
                 break;
-
             case 3:
                 if(gatillo > 0){
                     if(removeEmployee(employee, TAMEMP)){
@@ -47,22 +44,20 @@ int main()
                     getchar();
                 }
                 break;
-
             case 4:
                 if(gatillo > 0){
                 infoEmployees(employee, TAMEMP);
+
                 }else{
                     printf("\n PRIMERO DEBE INGRESAR UN EMPLEADO \n");
                     __fpurge(stdin);
                     getchar();
                 }
                 break;
-
             case 5:
                 printf("\nConfirma salida? s/n \n");
                 getCharConfirmValidado(&salir);
                 break;
-
             default:
                 printf("\n***** Opcion incorrecta *****\n");
                 __fpurge(stdin);

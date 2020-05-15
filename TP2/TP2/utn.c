@@ -139,7 +139,60 @@ void getCharConfirmValidado(char* caracter){
             *caracter = opcion;
             bucle = 1;
         }else{
-            printf("\n Opcion incorrecta, ingrese S o N. \n");
+            printf("\n Opcion incorrecta, ingrese S o N : ");
         }
     }
+}
+
+/**
+* \brief solicita un sueldo validado
+* \param sueldo puntero donde se desea guardar el sueldo
+*/
+int getSueldo(float* sueldo){
+    int retorno = 0;
+    float aux;
+    int scan;
+
+    printf("Ingrese sueldo: \n");
+    scan = scanf("%f", &aux);
+
+    if(scan == 0 || aux < 0){
+        printf("\nSueldo incorrecto\n");
+        getchar();
+    }else{
+        *sueldo = aux;
+        retorno = 1;
+    }
+
+    return retorno;
+}
+
+/**
+* \brief solicita un nombre, lo valida y lo pone en formato Nombre
+* \param nombre cadena dondse se cuardara el nombre ingresado
+* \param tam tamaño de la cadena
+*/
+int getNombre(char nombre[], int tam){
+    int retorno = 1;
+    int leng;
+    char auxCadena[tam];
+
+    __fpurge(stdin);
+    getStr(auxCadena, tam);
+
+    leng = strlen(auxCadena);
+
+    for(int i= 0; i < leng ; i++){
+        if(!((auxCadena[i] > 64 && auxCadena[i] < 91) || (auxCadena[i] > 96 && auxCadena[i] < 123) || (auxCadena[i] > 127 && auxCadena[i] < 167))){
+            printf("Error en cadena entrante. SOLO LETRAS \n");
+            getchar();
+            retorno = 0;
+            break;
+        }
+    }
+    if(retorno == 1){
+        tipoNombre(auxCadena, tam);
+        strcpy(nombre, auxCadena);
+    }
+    return retorno;
 }

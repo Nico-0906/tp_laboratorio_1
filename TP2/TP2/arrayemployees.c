@@ -48,27 +48,23 @@ int addEmployee(int idx, eEmployee employee[], int tamemp){
         auxEmpleado.id = idx;
 
         printf("Ingrese nombre: \n");
-        __fpurge(stdin);
-        getStr(auxEmpleado.name, 51);
-        tipoNombre(auxEmpleado.name, 51);
 
-        printf("Ingrese apellido: \n");
-        getStr(auxEmpleado.lastName, 51);
-        tipoNombre(auxEmpleado.lastName, 51);
+        if(getNombre(auxEmpleado.name, 51)){
+            printf("Ingrese apellido: \n");
 
-        printf("Ingrese sueldo: \n");
-        scanf("%f", &auxEmpleado.salary);
+            if(getNombre(auxEmpleado.lastName, 51)){
 
-        printf("Ingrese sector  \n");
-        scanf("%d", &auxEmpleado.sector);
+                if(getSueldo(&auxEmpleado.salary)){
 
-        printf("\nEmpleado agregado con exito.!");
-
-        auxEmpleado.isEmpty = 0;
-
-        employee[lugar] = auxEmpleado;
-
-        retorno = 1;
+                    printf("Ingrese sector  \n");
+                    scanf("%d", &auxEmpleado.sector);
+                    printf("\nEmpleado agregado con exito.!");
+                    auxEmpleado.isEmpty = 0;
+                    employee[lugar] = auxEmpleado;
+                    retorno = 1;
+                }
+            }
+        }
     }
 
     return retorno;
@@ -124,7 +120,8 @@ int removeEmployee(eEmployee employee[], int tamemp){
 * \brief ordena los empleados segun el enunciado del tp
 * \param employee cadena de empleados que se desea ordenar
 * \param tamemp tamaño de dicha cadena
-* \param order orden con que se desea ordenar la cadena
+* \param order orden con que se desea ordenar apellido y sector
+*        (1 es de menor a mayor y de la A a la Z)
 * \return retorna -1 si no se pudo ordenar o 0 si se pudo satisfactoriamente
 */
 int sortEmployee(eEmployee employee[], int tamemp, int order){
@@ -134,12 +131,12 @@ int sortEmployee(eEmployee employee[], int tamemp, int order){
     for(int i = 0; i < tamemp - 1 ; i++){
         for(int j = i + 1 ; j < tamemp ; j++){
             if(order == 1){
-                if(employee[i].sector < employee[j].sector){
+                if(employee[i].sector > employee[j].sector){
                     auxEmployee = employee[i];
                     employee[i] = employee[j];
                     employee[j] = auxEmployee;
                     retorno = 0;
-                }else if(employee[i].sector == employee[j].sector && strcmp(employee[i].lastName, employee[j].lastName)){
+                }else if((employee[i].sector == employee[j].sector) && (strcmp(employee[i].lastName, employee[j].lastName) > 0)){
                     auxEmployee = employee[i];
                     employee[i] = employee[j];
                     employee[j] = auxEmployee;
@@ -151,7 +148,7 @@ int sortEmployee(eEmployee employee[], int tamemp, int order){
                     employee[i] = employee[j];
                     employee[j] = auxEmployee;
                     retorno = 0;
-                }else if(employee[i].sector == employee[j].sector && strcmp(employee[i].lastName, employee[j].lastName)){
+                }else if((employee[i].sector == employee[j].sector) && (strcmp(employee[i].lastName, employee[j].lastName) < 0)){
                     auxEmployee = employee[i];
                     employee[i] = employee[j];
                     employee[j] = auxEmployee;
@@ -199,7 +196,7 @@ int printEmployees(eEmployee employee[], int tamemp){
     if(buscador){
         for(int i = 0 ; i < tamemp ; i++){
             if(employee[i].isEmpty == 0){
-                printf("%d   %10s      %10s    $%.2f       %d\n", employee[i].id, employee[i].name, employee[i].lastName, employee[i].salary, employee[i].sector);
+                printf("%d   %10s      %10s    $%8.2f       %d\n", employee[i].id, employee[i].name, employee[i].lastName, employee[i].salary, employee[i].sector);
                 retorno = 1;
             }
         }
