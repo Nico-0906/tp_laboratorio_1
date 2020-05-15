@@ -46,9 +46,11 @@ int addEmployee(int idx, eEmployee employee[], int tamemp){
 
                     printf("Ingrese sector  \n");
                     scanf("%d", &auxEmpleado.sector);
-                    printf("\nEmpleado agregado con exito.!");
                     auxEmpleado.isEmpty = 0;
                     employee[lugar] = auxEmpleado;
+                    printf("\nEmpleado agregado con exito.!");
+                    __fpurge(stdin);
+                    getchar();
                     retorno = 1;
                 }
             }

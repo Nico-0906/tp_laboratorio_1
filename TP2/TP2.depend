@@ -29,3 +29,31 @@
 	<ctype.h>
 	"utn.h"
 
+1589566419 source:/home/nico/Desktop/nueva/tp_laboratorio_1/TP2/arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"arrayemployees.h"
+	"utn.h"
+
+1589566419 /home/nico/Desktop/nueva/tp_laboratorio_1/TP2/arrayemployees.h
+
+1589566461 /home/nico/Desktop/nueva/tp_laboratorio_1/TP2/utn.h
+
+1589566419 source:/home/nico/Desktop/nueva/tp_laboratorio_1/TP2/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	"arrayemployees.h"
+	"utn.h"
+
+1589566419 source:/home/nico/Desktop/nueva/tp_laboratorio_1/TP2/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio_ext.h>
+	<ctype.h>
+	"utn.h"
+
