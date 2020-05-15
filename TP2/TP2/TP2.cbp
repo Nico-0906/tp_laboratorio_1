@@ -35,12 +35,13 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="arrayemployees.h" />
-		<Unit filename="employee.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="utn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utn.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

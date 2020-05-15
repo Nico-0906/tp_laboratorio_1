@@ -3,6 +3,7 @@
 #include <stdio_ext.h>
 
 #include "arrayemployees.h"
+#include "utn.h"
 
 #define TAMEMP 1000
 
@@ -10,9 +11,9 @@ int main()
 {
     char seguir = 's';
     char confirma;
-    //int gatillo = 0;
+    int gatillo = 0;
     int proximoId = 0;
-    int auxid;
+
     eEmployee employee[TAMEMP];
 
     initEmployees(employee, TAMEMP);
@@ -20,25 +21,39 @@ int main()
     do{
         switch(menuOpciones()){
             case 1:
-                printf("Alta \n");
                 if(addEmployee(proximoId, employee, TAMEMP)){
                     proximoId++;
+                    gatillo++;
                 }
                 break;
             case 2:
-                printf("Modificar\n");
+                if(gatillo > 0){
                 modificarEmpleado(employee, TAMEMP);
+                }else{
+                    printf("\n PRIMERO DEBE INGRESAR UN EMPLEADO \n");
+                    __fpurge(stdin);
+                    getchar();
+                }
                 break;
             case 3:
-                system("clear");
-                printf("Baja\n");
-                printf("Ingrese id empleado: ");
-                scanf("%d", &auxid);
-                getchar();
-                removeEmployee(employee, TAMEMP, auxid);
+                if(gatillo > 0){
+                    if(removeEmployee(employee, TAMEMP)){
+                        gatillo--;
+                    }
+                }else{
+                    printf("\n PRIMERO DEBE INGRESAR UN EMPLEADO \n");
+                    __fpurge(stdin);
+                    getchar();
+                }
                 break;
             case 4:
-                printf("Informar\n");
+                if(gatillo > 0){
+                infoEmployees(employee, TAMEMP);
+                }else{
+                    printf("\n PRIMERO DEBE INGRESAR UN EMPLEADO \n");
+                    __fpurge(stdin);
+                    getchar();
+                }
                 break;
             case 5:
                 printf("\nConfirma salida? s/n \n");
