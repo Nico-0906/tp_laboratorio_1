@@ -9,23 +9,23 @@
 
 int main()
 {
-    char seguir = 's';
-    char confirma;
-    int gatillo = 0;
-    int proximoId = 0;
+    char salir = 'n';   //variable para continuar o salir del programa
+    int gatillo = 0;     //gatillo para verificar entrada a las opciones
+    int proximoId = 0;   //autoid incremental para los empleados
 
     eEmployee employee[TAMEMP];
-
     initEmployees(employee, TAMEMP);
 
     do{
         switch(menuOpciones()){
+
             case 1:
                 if(addEmployee(proximoId, employee, TAMEMP)){
                     proximoId++;
                     gatillo++;
                 }
                 break;
+
             case 2:
                 if(gatillo > 0){
                 modificarEmpleado(employee, TAMEMP);
@@ -35,6 +35,7 @@ int main()
                     getchar();
                 }
                 break;
+
             case 3:
                 if(gatillo > 0){
                     if(removeEmployee(employee, TAMEMP)){
@@ -46,6 +47,7 @@ int main()
                     getchar();
                 }
                 break;
+
             case 4:
                 if(gatillo > 0){
                 infoEmployees(employee, TAMEMP);
@@ -55,18 +57,20 @@ int main()
                     getchar();
                 }
                 break;
+
             case 5:
                 printf("\nConfirma salida? s/n \n");
-                __fpurge(stdin);
-                scanf("%c", &confirma);
+                getCharConfirmValidado(&salir);
+                break;
 
-                if(confirma == 's'){
-                    seguir = 'n';
-                }
+            default:
+                printf("\n***** Opcion incorrecta *****\n");
+                __fpurge(stdin);
+                getchar();
                 break;
         }
 
-    }while(seguir == 's');
+    }while(salir == 'n');
 
     return 0;
 }

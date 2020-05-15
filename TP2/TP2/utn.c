@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio_ext.h>
+#include <ctype.h>
 
 #include "utn.h"
 
@@ -12,14 +13,16 @@
 * \return retorna 0 si completo con exito la tarea o -1 si no.
 */
 int myGets(char cadena[], int tam){
+    int retorno = -1;
+
     if(cadena != NULL && tam > 0 && fgets(cadena, tam, stdin) == cadena){
         __fpurge(stdin);
         if(cadena[strlen(cadena)-1] == '\n'){
             cadena[strlen(cadena)-1] = '\0';
         }
-        return 0;
+        retorno = 0;
     }
-    return -1;
+    return retorno;
 }
 
 /**
@@ -108,12 +111,35 @@ void tipoNombre(char vec[], int tam){
 * \param lugar donde se guardara la cadena obtenida
 * \param tamaño de dicha cadena
 */
-void getStr(char cadena[], int tam){    //falta desarrollar o probar
+void getStr(char cadena[], int tam){
+
     fgets(cadena, tam, stdin);
 
     for(int i = 0; i < tam; i++){
         if(cadena[i] == '\n'){
             cadena[i] = '\0';
+        }
+    }
+}
+
+/**
+* \brief solicita al usuario una confirmacion unicamente permite 's' o 'n'
+* \param puntero a caracter donde se guardara la opcion ingresada*
+*/
+void getCharConfirmValidado(char* caracter){
+    int bucle = 0;
+    char opcion;
+
+    while(bucle == 0){
+        __fpurge(stdin);
+        scanf("%c", &opcion);
+        opcion = tolower(opcion);
+
+        if(opcion == 's' || opcion == 'n'){
+            *caracter = opcion;
+            bucle = 1;
+        }else{
+            printf("\n Opcion incorrecta, ingrese S o N. \n");
         }
     }
 }

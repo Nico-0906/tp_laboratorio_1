@@ -98,7 +98,7 @@ int removeEmployee(eEmployee employee[], int tamemp){
             for(int i = 0 ; i < tamemp ; i++){
                 if(employee[i].id == id && employee[i].isEmpty == 0){
                     printf("\n Confirma baja? s/n  ");
-                    scanf("%c", &confirm);
+                    getCharConfirmValidado(&confirm);
 
                     if(confirm == 's'){
                         employee[i].isEmpty = 1;
@@ -194,12 +194,12 @@ int printEmployees(eEmployee employee[], int tamemp){
 
     system("clear");
     printf("****** Empleados ****** \n\n");
-    printf("ID       Name       LastName      Salary     Sector\n\n");
+    printf("ID       Name         LastName      Salary     Sector\n\n");
 
     if(buscador){
         for(int i = 0 ; i < tamemp ; i++){
             if(employee[i].isEmpty == 0){
-                printf("%d   %10s   %10s    $%.2f       %d\n", employee[i].id, employee[i].name, employee[i].lastName, employee[i].salary, employee[i].sector);
+                printf("%d   %10s      %10s    $%.2f       %d\n", employee[i].id, employee[i].name, employee[i].lastName, employee[i].salary, employee[i].sector);
                 retorno = 1;
             }
         }
@@ -232,6 +232,7 @@ int buscarLibre(eEmployee employee[], int tamsec){
 */
 int menuOpciones(){
     int retorno;
+    int bandera = 0;
     system("clear");
 
     printf("****** Gestion de empleados ****** \n\n");
@@ -242,7 +243,16 @@ int menuOpciones(){
     printf("5. Salir \n");
     printf("Ingrese opcion: ");
     __fpurge(stdin);
-    scanf("%d", &retorno);
+
+    while(bandera == 0){
+        scanf("%d", &retorno);
+        if(retorno <= 5 && retorno >= 1){
+            bandera = 1;
+        }else{
+            printf("\nOpcion incorrecta, ingrese opcion: ");
+            __fpurge(stdin);
+        }
+    }
 
     return retorno;
 }
@@ -253,6 +263,7 @@ int menuOpciones(){
 */
 int menuInformar(){
     int retorno;
+    int bandera = 0;
     system("clear");
 
     printf("****** Menu de informes ******\n\n");
@@ -262,7 +273,16 @@ int menuInformar(){
     printf("3. Salir\n");
     printf("Ingrese opcion: ");
     __fpurge(stdin);
-    scanf("%d", &retorno);
+
+    while(bandera == 0){
+        scanf("%d", &retorno);
+        if(retorno <= 3 && retorno >= 1){
+            bandera = 1;
+        }else{
+            printf("\nOpcion incorrecta, ingrese opcion: ");
+            __fpurge(stdin);
+        }
+    }
 
     return retorno;
 }
@@ -327,6 +347,7 @@ void modificarEmpleado(eEmployee employee[], int tamemp){
         scanf("%d", &opcion);
 
     switch(opcion){
+
         case 1:
             printf("Ingrese nuevo nombre: \n");
             __fpurge(stdin);
@@ -345,6 +366,7 @@ void modificarEmpleado(eEmployee employee[], int tamemp){
                 printf("\nOperacion cancelada. \n\n");
             }
             break;
+
         case 2:
             printf("Ingrese nuevo apellido: \n");
              __fpurge(stdin);
@@ -353,7 +375,7 @@ void modificarEmpleado(eEmployee employee[], int tamemp){
 
             printf("\nDesea confirmar la modificacion? s/n \n\n");
             __fpurge(stdin);
-            scanf("%c", &confirmacion);
+            getCharConfirmValidado(&confirmacion);
 
             if(confirmacion == 's'){
                 strcpy(employee[busqueda].lastName, auxNombre);
@@ -362,6 +384,7 @@ void modificarEmpleado(eEmployee employee[], int tamemp){
                 printf("\nOperacion cancelada. \n\n");
             }
             break;
+
         case 3:
             printf("Ingrese nueva salario: \n");
             scanf("%f", &auxSueldo);
@@ -376,6 +399,7 @@ void modificarEmpleado(eEmployee employee[], int tamemp){
                 printf("\nOperacion cancelada. \n\n");
             }
             break;
+
         case 4:
             printf("Ingrese nuevo sector: \n");
             scanf("%d", &auxId);
@@ -392,6 +416,7 @@ void modificarEmpleado(eEmployee employee[], int tamemp){
             break;
         case 5:
             break;
+
         }
 
     }else{
@@ -410,19 +435,22 @@ void infoEmployees(eEmployee employee[], int tamemp){
 
     while(salir == 'n'){
         switch(menuInformar()){
+
             case 1:
                 sortEmployee(employee, tamemp, 1);
                 printEmployees(employee, tamemp);
                 __fpurge(stdin);
                 getchar();
                 break;
+
             case 2:
                 totalYPromSalary(employee, tamemp);
                 break;
+
             case 3:
                 printf("\nDesea salir? s/n\n");
                 __fpurge(stdin);
-                scanf("%c", &salir);
+                getCharConfirmValidado(&salir);
                 break;
         }
     }
