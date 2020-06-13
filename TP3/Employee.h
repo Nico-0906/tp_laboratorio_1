@@ -9,8 +9,8 @@ typedef struct
 }Employee;
 
 Employee* employee_new();
-Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr);
-void employee_delete();
+Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr, char* sueldoStr);
+int employee_delete(Employee* employee);
 
 int employee_setId(Employee* this,int id);
 int employee_getId(Employee* this,int* id);
@@ -23,5 +23,10 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 
 int employee_setSueldo(Employee* this,int sueldo);
 int employee_getSueldo(Employee* this,int* sueldo);
+
+int validarId(Employee* employee);
+int validarNombre(Employee* employee);
+int validarHorasTrabajadas(Employee* employee);
+int validarSueldo(Employee* employee);
 
 #endif // employee_H_INCLUDED

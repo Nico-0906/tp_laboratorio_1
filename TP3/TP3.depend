@@ -151,3 +151,35 @@
 	"LinkedList.h"
 	"Employee.h"
 
+1592074126 source:c:\users\nico\desktop\tp_laboratorio_1\tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1592074126 c:\users\nico\desktop\tp_laboratorio_1\tp3\linkedlist.h
+
+1592082442 c:\users\nico\desktop\tp_laboratorio_1\tp3\employee.h
+
+1592074126 source:c:\users\nico\desktop\tp_laboratorio_1\tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1592074175 source:c:\users\nico\desktop\tp_laboratorio_1\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1592074126 c:\users\nico\desktop\tp_laboratorio_1\tp3\controller.h
+
+1592082472 source:c:\users\nico\desktop\tp_laboratorio_1\tp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+

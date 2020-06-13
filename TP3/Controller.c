@@ -13,6 +13,9 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
+
+    FILE* f = fopen("data.csv", "r");
+    fread(&emp, sizeof(eEmpleado), 1, f);
     return 1;
 }
 
