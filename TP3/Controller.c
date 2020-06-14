@@ -56,8 +56,10 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
     int error = 1;
     Employee* auxEmployee;
+
     FILE* f;
-    fopen(path, "rb");
+    f = fopen(path, "rb");
+
 
     while(!feof(f)){
         auxEmployee = employee_new();
