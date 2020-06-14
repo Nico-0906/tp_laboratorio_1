@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "LinkedList.h"
 #include "Employee.h"
@@ -26,7 +27,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 
             auxEmployee = employee_new();
             auxEmployee->id = atoi(buffer[0]);
-            strcpy(auxEmp->nombre, buffer[1]);
+            strcpy(auxEmployee->nombre, buffer[1]);
             auxEmployee->horasTrabajadas = atoi(buffer[2]);
             auxEmployee->sueldo = atoi(buffer[3]);
             ll_add(pArrayListEmployee, auxEmployee);
@@ -54,7 +55,6 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
     int error = 1;
-    int cant;
     Employee* auxEmployee;
     FILE* f;
     fopen(path, "rb");

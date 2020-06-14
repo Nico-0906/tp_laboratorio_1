@@ -200,3 +200,53 @@
 
 1592094632 c:\users\nico\desktop\tp_laboratorio_1\tp3\herramientas.h
 
+1592099730 source:c:\users\agos\desktop\tp_laboratorio_1\tp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"parser.h"
+
+1592099730 c:\users\agos\desktop\tp_laboratorio_1\tp3\linkedlist.h
+
+1592099730 c:\users\agos\desktop\tp_laboratorio_1\tp3\employee.h
+
+1592099730 c:\users\agos\desktop\tp_laboratorio_1\tp3\controller.h
+
+1592099730 c:\users\agos\desktop\tp_laboratorio_1\tp3\parser.h
+
+1592099730 source:c:\users\agos\desktop\tp_laboratorio_1\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"herramientas.h"
+
+1592099730 c:\users\agos\desktop\tp_laboratorio_1\tp3\herramientas.h
+
+1592099730 source:c:\users\agos\desktop\tp_laboratorio_1\tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"parser.h"
+
+1592100067 source:c:\users\agos\desktop\tp_laboratorio_1\tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1592099730 source:c:\users\agos\desktop\tp_laboratorio_1\tp3\herramientas.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"parser.h"
+
