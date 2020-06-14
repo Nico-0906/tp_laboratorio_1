@@ -18,6 +18,7 @@
 
 #ifndef __LINKEDLIST
 #define __LINKEDLIST
+
 struct Node
 {
     void* pElement;
@@ -35,13 +36,13 @@ struct LinkedList
 
 //Publicas
 LinkedList* ll_newLinkedList(void);
-int ll_len(LinkedList* this);
+int ll_len(LinkedList* this);  //devuelve el tamaño del linkedList
 Node* test_getNode(LinkedList* this, int nodeIndex);
 int test_addNode(LinkedList* this, int nodeIndex,void* pElement);
-int ll_add(LinkedList* this, void* pElement);
-void* ll_get(LinkedList* this, int index);
+int ll_add(LinkedList* this, void* pElement);   //se encarga de agregar el "pElement" al linkedlist "this" indicados, devuelve 0 o 1 si se pudo hacer o no
+void* ll_get(LinkedList* this, int index);  //le pasamos el linkedlist y la posicion y devuelve la direccion de memoria de ese lugar
 int ll_set(LinkedList* this, int index,void* pElement);
-int ll_remove(LinkedList* this,int index);
+int ll_remove(LinkedList* this,int index);  //remove el indice indicado en el linkedlist
 int ll_clear(LinkedList* this);
 int ll_deleteLinkedList(LinkedList* this);
 int ll_indexOf(LinkedList* this, void* pElement);

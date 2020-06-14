@@ -1,3 +1,6 @@
+#ifndef employee_H_INCLUDED
+#define employee_H_INCLUDED
+
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee);
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee);
 int controller_addEmployee(LinkedList* pArrayListEmployee);
@@ -8,4 +11,4 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee);
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee);
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
 
-
+#endif // employee_H_INCLUDED

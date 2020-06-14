@@ -1,5 +1,6 @@
 #ifndef employee_H_INCLUDED
 #define employee_H_INCLUDED
+
 typedef struct
 {
     int id;
@@ -29,4 +30,9 @@ int validarNombre(Employee* employee);
 int validarHorasTrabajadas(Employee* employee);
 int validarSueldo(Employee* employee);
 
+//int mostrarEmployee(Employee* employee);
+//int mostrarEmployees(LinkedList* lista);
+
+
 #endif // employee_H_INCLUDED
+

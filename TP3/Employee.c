@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "LinkedList.h"
 #include "Employee.h"
+#include "Controller.h"
+#include "parser.h"
 
 Employee* employee_new(){
     Employee* auxEmployee;
@@ -138,3 +141,46 @@ int validarSueldo(Employee* employee){
         error = 0;
     return error;
 }
+
+/*
+int mostrarEmployee(Employee* employee){
+    int error = 1;
+
+    if(employee != NULL){
+        error = 0;
+
+        printf("%d    %10s     %d       %d\n", employee->id, employee->nombre, employee->horasTrabajadas, employee->sueldo);
+
+    }
+
+    return error;
+}
+int mostrarEmployees(LinkedList* lista){
+    int error = 1;
+    int bandera = 1;
+    int tam;
+    tam = ll_len(lista);
+    Employee* auxEmployee;
+
+
+    if(lista != NULL){
+        printf("\nID         NOMBRE     HORAS TRABAJADAS     SUELDO\n\n");
+        error = 0;
+        for(int i = 0 ; i < tam ; i++){
+
+            auxEmployee = (Employee*) ll_get(lista, i);
+            if( auxEmployee != NULL){
+                mostrarEmployee(auxEmployee);
+                bandera = 0;
+            }
+        }
+        if(bandera == 1){
+            printf("No hay personas para mostrar\n");
+        }
+    error = 0;
+    }
+
+    return error;
+
+}
+*/

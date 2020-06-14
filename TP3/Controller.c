@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "LinkedList.h"
 #include "Employee.h"
-
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
  *
@@ -13,10 +13,35 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
+    int error = 1;
+    char buffer[4][120];
+    int cant;
+    Employee* auxEmployee;
+    FILE* f;
+    f = fopen(path, "r");
 
-    FILE* f = fopen("data.csv", "r");
-    fread(&emp, sizeof(eEmpleado), 1, f);
-    return 1;
+    while(!feof(f)){
+        cant = fscanf(f, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
+        if(cant == 4){
+
+            auxEmployee = employee_new();
+            auxEmployee->id = atoi(buffer[0]);
+            strcpy(auxEmp->nombre, buffer[1]);
+            auxEmployee->horasTrabajadas = atoi(buffer[2]);
+            auxEmployee->sueldo = atoi(buffer[3]);
+            ll_add(pArrayListEmployee, auxEmployee);
+            error = 0;
+        }
+    }
+    if(error == 1){
+        printf("\nNo se pudieron cargar los datos desde el documento.");
+    }else{
+        printf("\nDatos cargados con exito!");
+    }
+
+    fclose(f);
+
+    return error;
 }
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
@@ -28,7 +53,30 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int error = 1;
+    int cant;
+    Employee* auxEmployee;
+    FILE* f;
+    fopen(path, "rb");
+
+    while(!feof(f)){
+        auxEmployee = employee_new();
+        fread(auxEmployee , sizeof(Employee) , 1 , f);
+
+        ll_add(pArrayListEmployee, auxEmployee);
+        error = 0;
+
+    }
+
+    if(error == 1){
+        printf("\nNo se pudieron cargar los datos desde el documento.");
+    }else{
+        printf("\nDatos cargados con exito!");
+    }
+
+    fclose(f);
+
+    return error;
 }
 
 /** \brief Alta de empleados

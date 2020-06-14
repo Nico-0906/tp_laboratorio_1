@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
+#include "herramientas.h"
 
 /****************************************************
     Menu:
@@ -24,11 +25,32 @@ int main()
 {
     int option = 0;
     LinkedList* listaEmpleados = ll_newLinkedList();
+
+
+
     do{
+        option = menuOpciones();
         switch(option)
         {
             case 1:
-                controller_loadFromText("data.csv",listaEmpleados);
+                controller_loadFromText("data.csv", listaEmpleados);
+                break;
+            case 2:
+                controller_loadFromBinary("data.bin", listaEmpleados);
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
                 break;
         }
     }while(option != 10);
