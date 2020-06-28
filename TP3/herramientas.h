@@ -1,8 +1,0 @@
-#ifndef HERRAMIENTAS_H_INCLUDED
-#define HERRAMIENTAS_H_INCLUDED
-
-
-
-#endif // HERRAMIENTAS_H_INCLUDED
-
-int menuOpciones();
