@@ -11,6 +11,14 @@
 #include "compares.h"
 #include "Employee.h"
 
+/** \brief Compara los ID de dos empleados
+ *
+ *  \param void primer empleado
+ *  \param void primer empleado
+ *  \return retorno Retorna 0 si los ID son iguales, retorna -1
+ *  				si el primero es mayor al segundo y retorna 1
+ *  				si el segundo es mayor al primero
+ */
 int compareId(void* emp1, void* emp2){
 	int retorno;
 
@@ -28,6 +36,14 @@ int compareId(void* emp1, void* emp2){
 	return retorno;
 }
 
+/** \brief Compara los Nombres de dos empleados
+ *
+ *  \param void primer empleado
+ *  \param void primer empleado
+ *  \return retorno Retorna 0 si los nombres son iguales, retorna -1
+ *  				si el primero es mayor al segundo y retorna 1
+ *  				si el segundo es mayor al primero
+ */
 int compareNombre(void* emp1, void* emp2){
 	int retorno;
 
@@ -39,6 +55,14 @@ int compareNombre(void* emp1, void* emp2){
 	return retorno;
 }
 
+/** \brief Compara las horas trabajadas de dos empleados
+ *
+ *  \param void primer empleado
+ *  \param void primer empleado
+ *  \return retorno Retorna 0 si la cantidad de horas son iguales, retorna -1
+ *  				si las del primero son mas al segundo y retorna 1
+ *  				si el segundo es mayor al primero
+ */
 int compareHoras(void* emp1, void* emp2){
 	int retorno;
 
