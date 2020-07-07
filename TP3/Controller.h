@@ -1,3 +1,11 @@
+
+
+/**
+ * @brief
+ * @param path
+ * @param pArrayEmployee
+ * @return
+ */
 int controller_loadFromText(char* path , LinkedList* pArrayEmployee);
 int controller_loadFromBinary(char* path , LinkedList* pArrayEmployee);
 int controller_addEmployee(LinkedList* pArrayEmployee);

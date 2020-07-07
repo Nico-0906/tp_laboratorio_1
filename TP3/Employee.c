@@ -101,7 +101,6 @@ int employee_setSueldo(Employee* this, int salario){
 	return error;
 }
 
-
 int employee_setId(Employee* this, int id){
 	int error = 1;
 
